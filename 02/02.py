@@ -12,7 +12,7 @@ def run(program, noun, verb):
     program[program[i + 3]] = a + b if program[i] == 1 else a * b
 
 part_one = run(int_codes[:], 12, 2)
-part_two = [100 * noun + verb for noun in range(100) for verb in range(100) if run(int_codes[:], noun, verb) == 19690720][0]
+part_two = next(100 * noun + verb for noun in range(100) for verb in range(100) if run(int_codes[:], noun, verb) == 19690720)
 
 print('Print One: %d' % part_one)
 print('Print Two: %d' % part_two)
